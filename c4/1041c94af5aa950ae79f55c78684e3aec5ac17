@@ -1,0 +1,19 @@
+README.md
+  s_004eb525de41b1::t_acb8082067279b 90-104
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c41041c94af5aa950ae79f55c78684e3aec5ac17",
+  "prompts": {},
+  "sessions": {
+    "s_004eb525de41b1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b00b216f-7463-4545-8d8e-b13392b73a97",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Kenny Crous <kennycrous@oulook.com>"
+    }
+  }
+}
