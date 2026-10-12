@@ -1,0 +1,23 @@
+tests/test-get-claude-usage.sh
+  s_004eb525de41b1::t_0f2e9b2d8230d2 66,71
+  s_004eb525de41b1::t_52d3b888b206c7 30-35,39-46,730-848
+  s_004eb525de41b1::t_c8fd750162b73e 849
+get-claude-usage
+  s_004eb525de41b1::t_41ce42a74fb3b2 30,233-239,248,251-252,280,285-288,294-297,300,311-327,338-339,467,489,498,510,558,586,619
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "14896cfcbe817a361d09e8b10c72cf3a460dbaef",
+  "prompts": {},
+  "sessions": {
+    "s_004eb525de41b1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b00b216f-7463-4545-8d8e-b13392b73a97",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Kenny Crous <kennycrous@oulook.com>"
+    }
+  }
+}
