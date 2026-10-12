@@ -1,0 +1,19 @@
+tests/test-qml-functions.sh
+  s_004eb525de41b1::t_9f51f1a7a37fd7 27-29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "412c4f160df5eeb893107c573e3387773f3f85b2",
+  "prompts": {},
+  "sessions": {
+    "s_004eb525de41b1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b00b216f-7463-4545-8d8e-b13392b73a97",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Kenny Crous <kennycrous@oulook.com>"
+    }
+  }
+}
