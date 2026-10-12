@@ -39,6 +39,8 @@ PluginComponent {
     property real sevenDayUtil: 0
     property string sevenDayReset: ""
     property bool extraUsageEnabled: false
+    // ok | missing | expired | rate_limited | stale ("" until the first script run)
+    property string authState: ""
 
     // Weekly state
     property int weekMessages: 0
@@ -101,6 +103,7 @@ PluginComponent {
     property string displayFiveHourReset: currentPd && currentPd.fiveHourReset !== undefined ? currentPd.fiveHourReset : fiveHourReset
     property real displaySevenDayUtil: currentPd && currentPd.sevenDayUtil !== undefined ? currentPd.sevenDayUtil : sevenDayUtil
     property string displaySevenDayReset: currentPd && currentPd.sevenDayReset !== undefined ? currentPd.sevenDayReset : sevenDayReset
+    property string displayAuthState: currentPd && currentPd.authState !== undefined ? currentPd.authState : authState
     property real displayWeekTokens: currentPd && currentPd.weekTokens !== undefined ? currentPd.weekTokens : weekTokens
     property int displayWeekMessages: currentPd && currentPd.weekMessages !== undefined ? currentPd.weekMessages : weekMessages
     property int displayWeekSessions: currentPd && currentPd.weekSessions !== undefined ? currentPd.weekSessions : weekSessions
@@ -335,6 +338,23 @@ PluginComponent {
         ctx.stroke();
     }
 
+    // Notice for a non-ok auth state; "" when there is nothing to report
+    // (ok, not yet known, or an unrecognised value from a newer script).
+    function authNotice(state) {
+        switch (state) {
+        case "missing":
+            return tr("No Claude Code CLI login found. Run `claude /login` to see rate limits.");
+        case "expired":
+            return tr("Claude Code login expired. Run `claude` to refresh it.");
+        case "rate_limited":
+            return tr("The usage API is rate limiting requests. Showing the last known values.");
+        case "stale":
+            return tr("Could not reach the usage API. Showing the last known values.");
+        default:
+            return "";
+        }
+    }
+
     function formatCost(usd) {
         var useEur = lang === "fr" && usdEurRate > 0;
         var n = useEur ? usd * usdEurRate : usd;
@@ -474,6 +494,9 @@ PluginComponent {
         case "EXTRA_USAGE_ENABLED":
             extraUsageEnabled = (val === "true");
             break;
+        case "AUTH_STATE":
+            authState = val;
+            break;
         case "WEEK_MESSAGES":
             weekMessages = parseInt(val) || 0;
             break;
@@ -600,6 +623,9 @@ PluginComponent {
             break;
         case "PROFILE_EXTRA_USAGE":
             profileData = parseProfileBool(val, "extraUsageEnabled");
+            break;
+        case "PROFILE_AUTH_STATE":
+            profileData = parseProfileString(val, "authState");
             break;
         case "PROFILE_DAILY":
             {
