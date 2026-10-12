@@ -1,0 +1,19 @@
+ClaudeCodeUsageWidget.qml
+  s_004eb525de41b1::t_d39358d02797cd 107-110,128,140,154-159,165,169,178,778,826,1039-1056,1065,1163
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "da3ae54daa9acc5b7a66d4c3b93b8c5332a96afa",
+  "prompts": {},
+  "sessions": {
+    "s_004eb525de41b1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b00b216f-7463-4545-8d8e-b13392b73a97",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Kenny Crous <kennycrous@oulook.com>"
+    }
+  }
+}
