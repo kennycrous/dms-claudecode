@@ -1,0 +1,24 @@
+translations.js
+  s_004eb525de41b1::t_77d37e6fe2a9fd 95-102
+tests/test-qml-functions.sh
+  s_004eb525de41b1::t_9e01bde6b48451 18-21,53-54,77-112,144,470-533
+  s_004eb525de41b1::t_a1f6d554a54ef2 534
+ClaudeCodeUsageWidget.qml
+  s_004eb525de41b1::t_77d37e6fe2a9fd 42-43,106,341-357,497-499,627-629
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f8b8cdf15616b9b934bf76e2363a601778666270",
+  "prompts": {},
+  "sessions": {
+    "s_004eb525de41b1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b00b216f-7463-4545-8d8e-b13392b73a97",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Kenny Crous <kennycrous@oulook.com>"
+    }
+  }
+}
