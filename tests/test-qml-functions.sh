@@ -24,7 +24,9 @@ run_js() {
     node -e "$1" 2>/dev/null
 }
 
-# Build JS test harness with functions extracted from the QML widget
+# Build JS test harness with functions extracted from the QML widget.
+# The JS contains backticks (the notice strings mirror the widget), which are literal here.
+# shellcheck disable=SC2016
 JS_HARNESS='
 // --- Functions extracted from ClaudeCodeUsageWidget.qml ---
 
